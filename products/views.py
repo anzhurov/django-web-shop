@@ -13,7 +13,7 @@ product_service = ProductService()
 
 def index(request):
     all_products = product_service.get_all()
-    template = loader.get_template('index.html')
+    template = loader.get_template('products/products.html')
     context = {
         'products': all_products,
     }
