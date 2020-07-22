@@ -1,13 +1,23 @@
 import json
 
 from django.forms import model_to_dict
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
+from django.template import loader
 from django.views.decorators.csrf import csrf_exempt
 
 from products.models import Product
 from products.services import ProductService
 
 product_service = ProductService()
+
+
+def index(request):
+    all_products = product_service.get_all()
+    template = loader.get_template('index.html')
+    context = {
+        'products': all_products,
+    }
+    return HttpResponse(template.render(context, request))
 
 
 @csrf_exempt  # todo fix this
