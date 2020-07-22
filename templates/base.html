@@ -1,18 +1,22 @@
 <!DOCTYPE html>
+
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Web Shop{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
 <nav>
     <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/product">Products</a></li>
+        <li><a href="/products">Products</a></li>
         <li><a href="/admin">Admin</a></li>
     </ul>
     <div class="content">
-        {% block content %}{% endblock %}    
+        {% block content %}{% endblock %}
     </div>
     <footer>
         <p>

@@ -1,0 +1,12 @@
+h1 {
+    font-size: 50px;
+}
+
+ul {
+    list-decoration: none;
+}
+
+ul li {
+ display: inline;
+ margin-right: 5px;
+}
