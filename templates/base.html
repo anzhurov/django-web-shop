@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Web Shop{% endblock %}</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/product">Products</a></li>
+        <li><a href="/admin">Admin</a></li>
+    </ul>
+    <div class="content">
+        {% block content %}{% endblock %}    
+    </div>
+    <footer>
+        <p>
+            Developed by:
+            <a href="https://www.linkedin.com/in/valentyn-anzhurov-5260b8169/">
+                Valentyn Anhzurov
+            </a>
+        </p>
+    </footer>
+</nav>
+</body>
+</html>
