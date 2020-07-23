@@ -5,7 +5,5 @@ from products.models import Product
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    fields = ['title', 'price']
-
     def get_ordering(self, request):
         return ['id']
