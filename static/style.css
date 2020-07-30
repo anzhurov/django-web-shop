@@ -4,6 +4,7 @@ h1 {
 
 ul {
     list-decoration: none;
+    padding: 0;
 }
 
 ul li {

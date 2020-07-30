@@ -13,7 +13,28 @@
     <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/products">Products</a></li>
-        <li><a href="/admin">Admin</a></li>
+        {% if request.session.username %}
+            <li><a href="/admin">Admin</a></li>
+        {% endif %}
+        <hr>
+        {% if request.session.username %}
+            <p>Hello, {{ request.session.username }}</p>
+            <a href="/users/log_out">Log out</a>
+        {% else %}
+            <li>
+                <form method="post" action="/users/log_in/">
+                    {% csrf_token %}
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username">
+                    <br>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password">
+                    <br>
+                    <input type="submit" value="Log in">
+                </form>
+            </li>
+        {% endif %}
+        <hr>
     </ul>
     <div class="content">
         {% block content %}{% endblock %}
